@@ -1,5 +1,5 @@
 #dockerイメージを指定。
-FROM python:3.8-slim
+FROM python:3.12-slim
 RUN apt-get -y update && apt-get -y upgrade
 #コンテナ内での作業ディレクトリを指定。
 WORKDIR root
