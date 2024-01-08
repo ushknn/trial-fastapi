@@ -3,7 +3,7 @@ services:
   app:
     build: .
     volumes:
-      - ./src:/var/www/html
+      - .:/fastapi
     ports:
       - 8000:8000
     
