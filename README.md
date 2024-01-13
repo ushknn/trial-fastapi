@@ -9,3 +9,6 @@
 
 ### 2. リクエスト方法
 'IPアドレス:8000'
+
+### 3. テスト実行方法
+`docker-compose exec app pytest`
