@@ -6,3 +6,6 @@ WORKDIR fastapi
 
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
+
+RUN useradd -m pyuser
+USER pyuser
