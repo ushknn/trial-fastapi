@@ -7,4 +7,14 @@ services:
     ports:
       - 8000:8000
     tty: true
-    
+  db:
+    image: postgres:14
+    container_name: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - db-store:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=passw0rd
+volumes:
+  db-store:
