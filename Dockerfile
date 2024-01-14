@@ -1,6 +1,8 @@
 #dockerイメージを指定。
 FROM python:3.12
 RUN apt-get -y update && apt-get -y upgrade
+RUN apt-get -y install postgresql
+
 #コンテナ内での作業ディレクトリを指定。
 WORKDIR fastapi
 
