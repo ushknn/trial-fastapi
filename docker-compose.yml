@@ -1,4 +1,15 @@
 version: '3'
+
+networks:
+  app_network:
+    driver: bridge
+    driver_opts:
+      com.docker.networks.enable_ipv6: "false"
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.21.0.0/16
+
 services:
   app:
     build: .
@@ -7,6 +18,9 @@ services:
     ports:
       - 8000:8000
     tty: true
+    networks:
+      app_network:
+        ipv4_address: 172.21.0.2
   db:
     image: postgres:14
     container_name: postgres
@@ -16,5 +30,8 @@ services:
       - db-store:/var/lib/postgresql/data
     environment:
       - POSTGRES_PASSWORD=passw0rd
+    networks:
+      app_network:
+        ipv4_address: 172.21.0.3
 volumes:
   db-store:
