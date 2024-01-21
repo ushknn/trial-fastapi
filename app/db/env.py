@@ -7,12 +7,10 @@ from alembic import context
 
 
 import sys
-print("------------------------------------------------------------")
-print(sys.path)
-print("------------------------------------------------------------")
-sys.path.append("../")
-import database 
-import models
+sys.path.append("../../")
+
+from app import database 
+from app import models
 
 
 # this is the Alembic Config object, which provides
